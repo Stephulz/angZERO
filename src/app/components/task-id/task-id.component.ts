@@ -14,9 +14,11 @@ export class TaskIdComponent implements OnInit {
     private activeRoute: ActivatedRoute,
   ) { }
 
+  taskID = [];
+
   buscarId() {
     this.taskService.buscarId(this.activeRoute.snapshot.params['id']);
-     }
+  }
 
   ngOnInit() {
     this.buscarId();

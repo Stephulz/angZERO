@@ -31,7 +31,7 @@ export class EditTaskComponent implements OnInit {
   }
 
   buscarId() {
-    this.taskService.buscarId(this.activeRoute.snapshot.params['id'], (task)=>{
+    this.taskService.buscarIdPut(this.activeRoute.snapshot.params['id'], (task)=>{
       //debugger;
       //let asd = task;
       this.model = new Task(task.taskName, task.status);
@@ -40,8 +40,8 @@ export class EditTaskComponent implements OnInit {
 
   editTask(){
     this.taskService.editTask(this.activeRoute.snapshot.params['id'], this.model).subscribe();
-    console.log("editTask method, routeID: "+this.activeRoute.snapshot.params['id'] +
-    " Model name: "+ this.model.name+ " Model status: "+this.model.status);
+    //console.log("editTask method, routeID: "+this.activeRoute.snapshot.params['id'] +
+    //" Model name: "+ this.model.name+ " Model status: "+this.model.status);
   }
 
   ngOnInit() {

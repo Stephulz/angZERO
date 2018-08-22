@@ -17,7 +17,7 @@ export class TaskService {
 
   tasksDone = [];
 
-  //tasksId = [];
+  tasksId = [];
   //taskIdName:string;
   //taskIdStatus:string;
 
@@ -62,10 +62,10 @@ export class TaskService {
    * @param id: ID da task
    * @param callback: atributo necessário para tornar um metodo asyncrono
    */
-  buscarId(id:string, callback){
+  buscarIdPut(id:string, callback){
     return this.http.get(`${BASE_API}/task/${id}`)
     .subscribe(response => {
-      // this.tasksId=response.json();
+      //this.tasksId=response.json();
       // this.taskIdName=response.json()[0].taskName;
       // this.taskIdStatus=response.json()[0].status;
       // console.log(this.tasksId);
@@ -77,6 +77,13 @@ export class TaskService {
       //tipicamente passada como argumento de outra função e/ou chamada quando um evento for acontecido,
       // ou quando uma parte de código receber uma resposta de que estava à espera.
       callback(resp); 
+    });
+  }
+
+  buscarId(id:string){
+    return this.http.get(`${BASE_API}/task/${id}`)
+    .subscribe(response => {
+      this.tasksId=response.json();
     });
   }
 
