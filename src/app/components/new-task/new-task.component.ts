@@ -24,6 +24,7 @@ export class NewTaskComponent implements OnInit {
     console.log(this.model);
     console.log(this.newTask(this.model));
     console.log(this.model.name);
+    alert("Task cadastrada com sucesso");
   }
 
   get diagnostic() { return JSON.stringify(this.model); }
