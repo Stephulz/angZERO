@@ -80,6 +80,11 @@ export class TaskService {
     });
   }
 
+
+   /** 
+   * Busca uma task por ID
+   * @param id: ID da task
+   */
   buscarId(id:string){
     return this.http.get(`${BASE_API}/task/${id}`)
     .subscribe(response => {

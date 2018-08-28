@@ -4,6 +4,7 @@ import { TasksComponent } from './components/tasks/tasks.component';
 import { TaskTodoComponent } from './components/task-todo/task-todo.component';
 import { TaskDoneComponent } from './components/task-done/task-done.component';
 import { TaskIdComponent } from './components/task-id/task-id.component';
+import { FormCadComponent } from './form-cad/form-cad.component';
 
 import { ModuleWithProviders } from '@angular/core';
 import { NewTaskComponent } from './components/new-task/new-task.component';
@@ -22,7 +23,7 @@ export const ROUTES: Routes = [
         component: HelloWorldComponent
     },
     {
-        path: 'helloWorld',
+        path: 'hello-world',
         component: HelloWorldComponent
     },
     {
@@ -48,6 +49,10 @@ export const ROUTES: Routes = [
     {
         path: 'tasks/edit/:id',
         component: EditTaskComponent
+    },
+    {
+        path: 'cadastro',
+        component: FormCadComponent
     },
     
 

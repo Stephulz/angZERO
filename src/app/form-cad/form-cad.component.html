@@ -1,0 +1,241 @@
+
+    <!--
+  <form>
+  <div class="row col-md-6">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+            <label for="nomeDaEmpresa">Nome da empresa</label>
+            <input type="text" class="form-control" id="nomeDaEmpresa" placeholder="Nome da Empresa"  [(ngModel)]="model.nomeDaEmpresa"/>
+         </div>
+       </div>
+         </div>
+-->
+<form  (ngSubmit)="onSubmit()" #newCad="ngForm" style="width: 45%; max-width: 1000px; margin: auto;">
+    <h2 class="display-3" style="margin: auto;">Cadastro</h2>
+    <br>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="nomeDaEmpresa">Nome da Empresa</label>
+              <input type="text" class="form-control" id="nomeDaEmpresa" placeholder="Nome da Empresa"  [(ngModel)]="model.nomeDaEmpresa"/>
+            </div>
+          </div>
+        </div>
+    
+        <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+              <label for="CNPJ" >CNPJ</label>
+              <input type="text" class="form-control" id="CNPJ" placeholder="00.000.000/0000-00"  [(ngModel)]="model.CNPJ"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-8">
+            <div class="form-group">
+              <label for="inscricaoEstadual">Inscrição Estadual</label>
+              <input type="text" class="form-control" id="inscricaoEstadual" placeholder="Inscrição Estadual"  [(ngModel)]="model.inscricaoEstadual"/>
+            </div>
+        </div>
+      </div>
+
+      <div class="row">
+          <div class="col-md-8">
+            <div class="form-group">
+              <label for="site">Site</label>
+              <input type="text" class="form-control" id="site" placeholder="Site"  [(ngModel)]="model.site"/>
+            </div>
+        </div>
+      </div>
+
+      <div class="row">
+          <div class="col-md-8">
+            <div class="form-group">
+              <label for="endereco">Endereço</label>
+              <input type="text" class="form-control" id="endereco" placeholder="Ex. Av. Imperatriz Leopoldina"  [(ngModel)]="model.endereco"/>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+              <label for="numero">Número</label>
+              <input type="number" class="form-control" id="numero" placeholder="1777"  [(ngModel)]="model.numero"/>
+            </div>
+        </div>
+      </div>
+
+      <div class="row">
+          <div class="col-md-5">
+            <div class="form-group">
+              <label for="bairro">Bairro</label>
+              <input type="text" class="form-control" id="bairro" placeholder="Ex. Vila Leopoldina"  [(ngModel)]="model.bairro"/>
+            </div>
+        </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="CEP">CEP</label>
+                <input type="number" class="form-control" id="CEP" placeholder="00000-000"  [(ngModel)]="model.cep"/>
+              </div>
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="cidade">Cidade</label>
+              <input type="text" class="form-control" id="cidade" placeholder="Ex. São Paulo" [(ngModel)]="model.cidade"/>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+              <label for="estado">Estado</label>
+              <!--<input type="text" class="form-control" id="estado" placeholder="SP"  [(ngModel)]="model.estado"/>--> 
+              <select class="form-control" id="exampleFormControlSelect1">
+                  <option value="AC">Acre</option>
+                  <option value="AL">Alagoas</option>
+                  <option value="AP">Amapá</option>
+                  <option value="AM">Amazonas</option>
+                  <option value="BA">Bahia</option>
+                  <option value="CE">Ceará</option>
+                  <option value="DF">Distrito Federal</option>
+                  <option value="ES">Espírito Santo</option>
+                  <option value="GO">Goiás</option>
+                  <option value="MA">Maranhão</option>
+                  <option value="MT">Mato Grosso</option>
+                  <option value="MS">Mato Grosso do Sul</option>
+                  <option value="MG">Minas Gerais</option>
+                  <option value="PA">Pará</option>
+                  <option value="PB">Paraíba</option>
+                  <option value="PR">Paraná</option>
+                  <option value="PE">Pernambuco</option>
+                  <option value="PI">Piauí</option>
+                  <option value="RJ">Rio de Janeiro</option>
+                  <option value="RN">Rio Grande do Norte</option>
+                  <option value="RS">Rio Grande do Sul</option>
+                  <option value="RO">Rondônia</option>
+                  <option value="RR">Roraima</option>
+                  <option value="SC">Santa Catarina</option>
+                  <option value="SP">São Paulo</option>
+                  <option value="SE">Sergipe</option>
+                  <option value="TO">Tocantins</option>
+                </select>
+            </div>
+        </div>
+      </div>
+
+      <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="nomeDoResponsavelPelaAPI">Nome do Responsável pela API</label>
+              <input type="text" class="form-control" id="nomeDoResponsavelPelaAPI" placeholder="Ex. Trevor Belmont" [(ngModel)]="model.nomeDoResponsavelPelaAPI"/>
+            </div>
+        </div>
+      </div>
+
+      <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="CPFdoResponsavel">CPF do Responsável</label>
+              <input type="text" class="form-control" id="CPFdoResponsavel" placeholder="000.000.000-00" [(ngModel)]="model.CPFdoResponsavel"/>
+            </div>
+        </div>
+      </div>
+
+      <div class="row">
+          <div class="col-md-5">
+            <div class="form-group">
+              <label for="email">E-Mail</label>
+              <input type="email" class="form-control" id="email" placeholder="e-mail@email.com" [(ngModel)]="model.email"/>
+            </div>
+        </div>
+      </div>
+
+      <div class="row">
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="telefone">Telefone</label>
+              <input type="text" class="form-control" id="telefone" placeholder="(00) 0000-0000" [(ngModel)]="model.telefone"/>
+            </div>
+        </div>
+      </div>
+
+    <br>
+    
+
+      <button class="btn btn-primary" style="float: right; width:20%; margin: auto;" type="submit"><h6 style="font-size:1.3vw;">Cadastrar</h6></button>
+      <button class="btn btn-danger" style="float:  left; width:20%; margin: auto;" type="submit"><h6 style="font-size:1.3vw;">Cancelar</h6></button>
+
+</form>
+
+
+
+    
+<!--
+        <div class="form-group">
+              <label for="complemento">Complemento</label>
+              <input type="text" class="form-control" id="complemento" placeholder="Complemento"  [(ngModel)]="cep.complemento"/>
+            </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="cidade">Cidade</label>
+              <input type="text" class="form-control" id="cidade" placeholder="Cidade"  [(ngModel)]="cep.cidade"/>
+            </div>
+          </div>
+          <div class="col-md-6">
+              <div class="form-group">
+                <label for="bairro">Bairro</label>
+                <input type="text" class="form-control" id="bairro" placeholder="Bairro"  [(ngModel)]="cep.bairro"/>
+              </div>
+            </div>
+          </div>
+            <div class="form-group">
+                <label for="estado">Estado</label>
+                <input type="text" class="form-control" id="estado" placeholder="Estado"  [(ngModel)]="cep.estado"/>
+             </div>
+    
+             
+          
+    
+    <!--
+        </div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                    <label for="logradouro">Logradouro</label>
+                    <input type="text" class="form-control" id="logradouro" placeholder="Logradouro"  [(ngModel)]="cep.logradouro"/>
+                </div>
+              </div>
+              <div class="col-md-4">
+               <div class="form-group">
+                 <label for="numero">Número</label>
+                 <input type="text" class="form-control" id="numero" placeholder="Numero"  [(ngModel)]="cep.numero"/>
+               </div>
+              </div>
+            </div>
+            <div class="form-group">
+                  <label for="complemento">Complemento</label>
+                  <input type="text" class="form-control" id="complemento" placeholder="Complemento"  [(ngModel)]="cep.complemento"/>
+                </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="cidade">Cidade</label>
+                  <input type="text" class="form-control" id="cidade" placeholder="Cidade"  [(ngModel)]="cep.cidade"/>
+                </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="bairro">Bairro</label>
+                    <input type="text" class="form-control" id="bairro" placeholder="Bairro"  [(ngModel)]="cep.bairro"/>
+                  </div>
+                </div>
+              </div>
+                <div class="form-group">
+                    <label for="estado">Estado</label>
+                    <input type="text" class="form-control" id="estado" placeholder="Estado"  [(ngModel)]="cep.estado"/>
+                 </div>
+                </div>
+        -->

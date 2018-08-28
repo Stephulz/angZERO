@@ -24,10 +24,14 @@ export class EditTaskComponent implements OnInit {
   onSubmit(){
     this.submitted = true;
     console.log(this.model);
-    this.editTask();
-    
-    alert("Editado com sucesso");
-    location.reload();
+    try{
+      this.editTask();
+      alert("Editado com sucesso");
+      location.reload();
+    }catch(e){
+      alert("Erro ao editar");
+    }
+
   }
 
   buscarId() {

@@ -16,15 +16,19 @@ export class NewTaskComponent implements OnInit {
   ngOnInit() {
   }
 
-  model = new Task("name","status");
+  model = new Task("","");
   submitted = false;
 
   onSubmit(){
     this.submitted = true;
-    console.log(this.model);
-    console.log(this.newTask(this.model));
-    console.log(this.model.name);
-    alert("Task cadastrada com sucesso");
+    try{
+      console.log(this.model);
+      console.log(this.newTask(this.model));
+      console.log(this.model.name);
+      alert("Task cadastrada com sucesso");
+    }catch(e){
+    alert("Erro ao criar");
+    }
   }
 
   get diagnostic() { return JSON.stringify(this.model); }

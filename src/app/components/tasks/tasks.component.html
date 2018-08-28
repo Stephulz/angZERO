@@ -10,7 +10,7 @@
         <th scope="col">Deletar</th>
     </tr>
 
-  <tr *ngFor="let tasks of taskService.tasks" >
+  <tr *ngFor="let tasks of taskService.tasks">
     <td><a>{{tasks.id}}</a></td>
     <td><a>{{tasks.status}}</a></td>
     <td [routerLink]="['/tasks', tasks.id]"><a>{{tasks.taskName}}</a></td>
@@ -20,4 +20,4 @@
 </table>
 
 <br>
-<button style="margin-left: 45%"><a [routerLink]="['/tasks/new']">Nova Tarefa</a></button>
+<button [routerLink]="['/tasks/new']" style="margin-left: 45%"><a>Nova Tarefa</a></button>
