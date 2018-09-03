@@ -50,11 +50,6 @@ export const ROUTES: Routes = [
         path: 'tasks/edit/:id',
         component: EditTaskComponent
     },
-    {
-        path: 'cadastro',
-        component: FormCadComponent
-    },
-    
 
 ]
 

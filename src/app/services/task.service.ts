@@ -9,6 +9,7 @@ import { Task } from '../model/task';
 export class TaskService {
 
   constructor(private http:Http) { 
+
   }
   
   tasks = [];
@@ -25,7 +26,7 @@ export class TaskService {
    * Busca todas as tasks
    */
   buscar(){
-    return this.http.get(`${BASE_API}/tasks`)
+    return this.http.get(`/api/tasks`)
         .subscribe(response => {
           this.tasks=response.json();
           console.log(this.tasks);
@@ -37,7 +38,7 @@ export class TaskService {
    * Busca tasks com status TODO
    */
   buscarTodo(){
-    return this.http.get(`${BASE_API}/tasks/status/todo`)
+    return this.http.get(`/api/tasks/status/todo`)
     .subscribe(response => {
       this.tasksTodo=response.json();
       console.log(this.tasksTodo);
@@ -49,7 +50,7 @@ export class TaskService {
    * Busca tasks com status DONE
    */
   buscarDone(){
-    return this.http.get(`${BASE_API}/tasks/status/done`)
+    return this.http.get(`/api/tasks/status/done`)
     .subscribe(response => {
       this.tasksDone=response.json();
       console.log(this.tasksDone);
@@ -63,7 +64,7 @@ export class TaskService {
    * @param callback: atributo necessário para tornar um metodo asyncrono
    */
   buscarIdPut(id:string, callback){
-    return this.http.get(`${BASE_API}/task/${id}`)
+    return this.http.get(`/api/task/${id}`)
     .subscribe(response => {
       //this.tasksId=response.json();
       // this.taskIdName=response.json()[0].taskName;
@@ -86,7 +87,7 @@ export class TaskService {
    * @param id: ID da task
    */
   buscarId(id:string){
-    return this.http.get(`${BASE_API}/task/${id}`)
+    return this.http.get(`/api/task/${id}`)
     .subscribe(response => {
       this.tasksId=response.json();
     });
@@ -97,7 +98,7 @@ export class TaskService {
    * @param task: Objeto do tipo task(nome,status)
    */
   newTask(task:Task){
-    return this.http.post(`${BASE_API}/nova-tarefa`,task)
+    return this.http.post(`/api/nova-tarefa`,task)
   }
 
    /** 
@@ -106,7 +107,7 @@ export class TaskService {
    * @param task: Objeto do tipo task(nome,status)
    */
   editTask(id:string, task:Task){
-    return this.http.put(`${BASE_API}/atualizar-tarefa/${id}`,task)
+    return this.http.put(`/api/atualizar-tarefa/${id}`,task)
   }
 
    /** 
@@ -114,8 +115,7 @@ export class TaskService {
    * @param id: ID da task a ser deletada
    */
   deleteTask(id:string){
-    return this.http.delete(`${BASE_API}/remover-tarefa/${id}`)
+    return this.http.delete(`/api/remover-tarefa/${id}`)
   }
-
 }
 

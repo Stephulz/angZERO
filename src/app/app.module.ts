@@ -12,7 +12,6 @@ import { TaskDoneComponent } from './components/task-done/task-done.component';
 import { TaskIdComponent } from './components/task-id/task-id.component';
 import { NewTaskComponent } from './components/new-task/new-task.component';
 import { EditTaskComponent } from './components/edit-task/edit-task.component';
-import { FormCadComponent } from './form-cad/form-cad.component';
 
   /**APP MODULE:
    * Arquivo de configuração geral, onde ocorrem as definições de bibliotecas e componentes
@@ -31,7 +30,6 @@ import { FormCadComponent } from './form-cad/form-cad.component';
     TaskIdComponent,
     NewTaskComponent,
     EditTaskComponent,
-    FormCadComponent
   ],
   imports: [
     BrowserModule,

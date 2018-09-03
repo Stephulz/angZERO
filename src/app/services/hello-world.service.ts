@@ -12,7 +12,7 @@ export class HelloWorldService {
   helloWorld:string;
 
   buscar(){
-    return this.http.get(`${BASE_API}/hello-world`)
+    return this.http.get(`/api/hello-world`)
         .subscribe(response => {
           this.helloWorld=response.json().foo;
           console.log(this.helloWorld);
