@@ -1,23 +1,78 @@
 
-<h2>Tasks</h2>
+<h1 class="display-4" id="title">Tasks</h1>
+<br>
 
+<div class="container">
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let task"> {{task.id}} </td>
+    </ng-container>
+  
+    <!-- taskName Column -->
+    <ng-container matColumnDef="taskName">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td [routerLink]="['/tasks', task.id]" mat-cell *matCellDef="let task"> {{task.taskName}} </td>
+    </ng-container>
+  
+    <!-- status Column -->
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell *matCellDef="let task"> {{task.status}} </td>
+    </ng-container>
+
+     <!-- Edit Column -->
+    <ng-container matColumnDef="Edit">
+        <th mat-header-cell *matHeaderCellDef id="editDelete"> Edit </th>
+        <td [routerLink]="['/tasks/edit', task.id]" mat-cell *matCellDef="let task" id="editDelete">
+          <button mat-flat-button color="primary">Edit</button>
+        </td>
+    </ng-container>
+
+    <!-- Delete Column -->
+    <ng-container matColumnDef="Delete">
+        <th mat-header-cell *matHeaderCellDef id="editDelete"> Delete </th>
+        <td mat-cell *matCellDef="let task" id="editDelete">
+          <button mat-flat-button color="warn" (click)="deletarTask(task.id)">Delete</button>
+        </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+
+<br>
+<br>
+<div class="wrapper">
+  <button [routerLink]="['/tasks/new']" mat-flat-button color="primary" id="centerBtn" >New Task</button>
+</div>
+
+<!--
 <table class="table table-bordered">
     <tr>
         <th scope="col">Id</th>
         <th scope="col">Status</th>
-        <th scope="col">Name</th>
+        <th scope="col">taskName</th>
         <th scope="col">Editar</th>
         <th scope="col">Deletar</th>
     </tr>
 
-  <tr *ngFor="let tasks of taskService.tasks">
-    <td><a>{{tasks.id}}</a></td>
-    <td><a>{{tasks.status}}</a></td>
-    <td [routerLink]="['/tasks', tasks.id]"><a>{{tasks.taskName}}</a></td>
-    <td [routerLink]="['/tasks/edit', tasks.id]"><button><a>Editar</a></button></td>
-    <td><button (click)="deletarTask(tasks.id)"><a>Deletar</a></button>
+  <tr *ngFor="let task of tasks">
+    <td><a>{{task.id}}</a></td>
+    <td><a>{{task.status}}</a></td>
+    <td [routerLink]="['/tasks', task.id]"><a>{{task.taskName}}</a></td>
+    <td [routerLink]="['/tasks/edit', task.id]"><button><a>Editar</a></button></td>
+    <td><button (click)="deletarTask(task.id)"><a>Deletar</a></button></td>
   </tr>
 </table>
 
 <br>
 <button [routerLink]="['/tasks/new']" style="margin-left: 45%"><a>Nova Tarefa</a></button>
+
+-->

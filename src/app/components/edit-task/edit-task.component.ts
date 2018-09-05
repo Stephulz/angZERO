@@ -19,26 +19,21 @@ export class EditTaskComponent implements OnInit {
   
   submitted = false;
 
-  model = null;
+  model:Task = new Task (this.activeRoute.snapshot.params['id'],"","");
 
   onSubmit(){
     this.submitted = true;
     console.log(this.model);
-    try{
-      this.editTask();
-      alert("Editado com sucesso");
-      location.reload();
-    }catch(e){
-      alert("Erro ao editar");
-    }
-
+    this.editTask();
+    alert("Editado com sucesso");
+    location.reload();
   }
 
   buscarId() {
     this.taskService.buscarIdPut(this.activeRoute.snapshot.params['id'], (task)=>{
       //debugger;
       //let asd = task;
-      this.model = new Task(task.taskName, task.status);
+      this.model = new Task(this.activeRoute.snapshot.params['id'],task.taskName, task.status);
     });
   }
 

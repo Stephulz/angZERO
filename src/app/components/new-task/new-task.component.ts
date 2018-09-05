@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TaskService } from 'src/app/services/task.service'
+import { TaskService } from 'src/app/services/task.service';
+import { ActivatedRoute } from '@angular/router';
 import { Task } from 'src/app/model/task';
 
 @Component({
@@ -11,24 +12,21 @@ export class NewTaskComponent implements OnInit {
 
   constructor(
     private taskService:TaskService,
+    private activeRoute: ActivatedRoute,
   ) { }
 
   ngOnInit() {
   }
 
-  model = new Task("","");
+  model = new Task(this.activeRoute.snapshot.params['id'],"","");
   submitted = false;
 
   onSubmit(){
     this.submitted = true;
-    try{
       console.log(this.model);
       console.log(this.newTask(this.model));
       console.log(this.model.name);
       alert("Task cadastrada com sucesso");
-    }catch(e){
-    alert("Erro ao criar");
-    }
   }
 
   get diagnostic() { return JSON.stringify(this.model); }

@@ -25,12 +25,14 @@ export class TaskService {
    /** 
    * Busca todas as tasks
    */
-  buscar(){
+  buscar(callback){
     return this.http.get(`/api/tasks`)
         .subscribe(response => {
-          this.tasks=response.json();
-          console.log(this.tasks);
-        });
+          //this.tasks=response.json();
+          let respTask = response.json();
+          console.log("SERVICE LOG: "+response);
+          callback(respTask);
+    });
   }
 
 
@@ -53,7 +55,7 @@ export class TaskService {
     return this.http.get(`/api/tasks/status/done`)
     .subscribe(response => {
       this.tasksDone=response.json();
-      console.log(this.tasksDone);
+      console.log(this.tasksDone);   
     });
   }
 
@@ -86,12 +88,14 @@ export class TaskService {
    * Busca uma task por ID
    * @param id: ID da task
    */
+  /*
   buscarId(id:string){
     return this.http.get(`/api/task/${id}`)
     .subscribe(response => {
       this.tasksId=response.json();
     });
   }
+  */
 
  /** 
    * Cria uma nova task

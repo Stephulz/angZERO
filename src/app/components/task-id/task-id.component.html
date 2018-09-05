@@ -1,3 +1,4 @@
+<!--
 <table>
     <tr *ngFor="let tasks of taskService.tasksId">
       <td>Id: <a>{{tasks.id}}</a></td>
@@ -5,3 +6,32 @@
       <td>Name: <a>{{tasks.taskName}}</a></td>
     </tr>
   </table>
+  -->
+<div class="container">
+    <h2 class="display-4" id="title">Task Details</h2>
+    <br>
+<div id="content">
+  <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Task Name</mat-card-title>
+        <mat-card-subtitle>{{taskId.name}}</mat-card-subtitle>
+      </mat-card-header>
+      <!--<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">-->
+      <mat-card-content>
+        <p>
+            Status: {{taskId.status}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <div id="formButton">
+          <button [routerLink]="['/tasks']" mat-raised-button >BACK</button>
+          &nbsp;
+          <button [routerLink]="['/tasks/edit', taskId.id]" mat-flat-button color="primary">EDIT</button>
+          &nbsp;  
+          <button (click)="deletarTask(taskId.id)" mat-flat-button color="warn">DELETE</button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+</div>
+</div>

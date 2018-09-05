@@ -13,6 +13,25 @@ import { TaskIdComponent } from './components/task-id/task-id.component';
 import { NewTaskComponent } from './components/new-task/new-task.component';
 import { EditTaskComponent } from './components/edit-task/edit-task.component';
 
+
+//ANGULAR MATERIAL
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+//Table
+import {MatTableModule} from '@angular/material/table';
+//Button
+import {MatButtonModule} from '@angular/material/button';
+//Card
+import {MatCardModule} from '@angular/material/card';
+//Form-field
+import {MatFormFieldModule} from '@angular/material/form-field';
+//Select (mat-option)
+import {MatSelectModule} from '@angular/material/select';
+//Form
+import {MatInputModule} from '@angular/material';
+//Radio button
+import {MatRadioModule} from '@angular/material/radio';
+
+
   /**APP MODULE:
    * Arquivo de configuração geral, onde ocorrem as definições de bibliotecas e componentes
    * @param imports: Bibliotecas
@@ -36,7 +55,15 @@ import { EditTaskComponent } from './components/edit-task/edit-task.component';
     HttpModule,
     routes,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

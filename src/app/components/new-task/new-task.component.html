@@ -1,3 +1,32 @@
+<form (ngSubmit)="onSubmit()" #newTask="ngForm">
+    <div class="container">
+        <div class="example-container">
+            <h2>New Task</h2>
+            <br>
+            <mat-form-field>
+              <input  type="text" class="form-control" id="name"
+              placeholder="Task Name"
+              required
+              [(ngModel)]="model.name" name="name"
+              #name="ngModel" matInput >
+            </mat-form-field>
+        
+            <mat-radio-group [(ngModel)]="model.status" name="status"> 
+                <mat-radio-button color="primary" value="todo" name="status">To do</mat-radio-button>
+                &nbsp;
+                <mat-radio-button color="primary" value="done" name="status">Done</mat-radio-button>
+            </mat-radio-group>
+          </div>
+    
+          <br>
+          <button [routerLink]="['/tasks']" mat-raised-button>Back</button>
+          &nbsp;
+          <button type="submit" mat-flat-button color="primary" [disabled]="!newTask.valid">Submit</button>
+    
+        </div>
+    </form>
+
+<!--
 
 <h2>New Task</h2>
 
@@ -21,3 +50,4 @@
   <button type="submit" class="btn btn-success" [disabled]="!newTask.valid">Submit</button>
 
 </form>
+-->

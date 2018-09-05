@@ -1,0 +1,18 @@
+.example-card {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+.example-header-image {
+    background-image: url('https://static.thenounproject.com/png/39626-200.png');
+    background-size: 100%;
+    border-image: url('https://www.solidbackgrounds.com/images/1920x1080/1920x1080-black-solid-color-background.jpg') 30 round;
+  }
+
+#title{
+    text-align: center;
+}
+
+#formButton {
+  margin-left: 11%;
+}
