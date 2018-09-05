@@ -22,6 +22,18 @@ table {
     width: 100%;
   }
 
+td{
+    text-align: center;
+}
+
+td:hover{
+    background-color: whitesmoke;
+}
+
+#editDelete:hover{
+    background-color: white;
+}
+
 #editDelete {
     text-align: center;
 }
