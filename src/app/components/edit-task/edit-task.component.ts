@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from 'src/app/services/task.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Task } from 'src/app/model/task';
 
 @Component({
@@ -13,6 +13,7 @@ export class EditTaskComponent implements OnInit {
   constructor(
     private taskService:TaskService,
     private activeRoute: ActivatedRoute,
+    private router:Router,
   ) { }
 
 
@@ -26,7 +27,7 @@ export class EditTaskComponent implements OnInit {
     console.log(this.model);
     this.editTask();
     alert("Editado com sucesso");
-    location.reload();
+    this.router.navigate(['/tasks',]);
   }
 
   buscarId() {
