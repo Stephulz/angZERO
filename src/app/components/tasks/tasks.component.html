@@ -49,8 +49,12 @@
 
 <br>
 <br>
-<div class="wrapper">
-  <button [routerLink]="['/tasks/new']" mat-flat-button color="primary" id="centerBtn" >New Task</button>
+<div id="wrapper">
+  <button [routerLink]="['/tasks/status/todo']" mat-flat-button color="primary">Tasks to-do</button>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <button [routerLink]="['/tasks/new']" mat-flat-button color="primary">New Task</button>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <button [routerLink]="['/tasks/status/done']" mat-flat-button color="primary">Tasks done</button>
 </div>
 
 <!--

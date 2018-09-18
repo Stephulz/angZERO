@@ -11,16 +11,6 @@ export class TaskService {
   constructor(private http:Http) { 
 
   }
-  
-  tasks = [];
-
-  tasksTodo = [];
-
-  tasksDone = [];
-
-  tasksId = [];
-  //taskIdName:string;
-  //taskIdStatus:string;
 
    /** 
    * Busca todas as tasks
@@ -39,11 +29,12 @@ export class TaskService {
    /** 
    * Busca tasks com status TODO
    */
-  buscarTodo(){
+  buscarTodo(callback){
     return this.http.get(`/api/tasks/status/todo`)
     .subscribe(response => {
-      this.tasksTodo=response.json();
-      console.log(this.tasksTodo);
+      let respTaskTodo = response.json();
+      console.log("SERVICE LOG: "+ response);
+      callback(respTaskTodo);
     });
   }
 
@@ -51,11 +42,12 @@ export class TaskService {
     /** 
    * Busca tasks com status DONE
    */
-  buscarDone(){
+  buscarDone(callback){
     return this.http.get(`/api/tasks/status/done`)
     .subscribe(response => {
-      this.tasksDone=response.json();
-      console.log(this.tasksDone);   
+      let respTaskDone = response.json();
+      console.log("SERVICE LOG: "+ response);   
+      callback(respTaskDone);
     });
   }
 

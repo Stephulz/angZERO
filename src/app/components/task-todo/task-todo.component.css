@@ -1,0 +1,32 @@
+#title{
+    text-align: center;
+}
+
+/*Center button in div */
+#wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*Center button in div */
+
+table {
+    width: 100%;
+  }
+
+td{
+    text-align: center;
+}
+
+td:hover{
+    background-color: whitesmoke;
+}
+
+#editDelete:hover{
+    background-color: white;
+}
+
+#editDelete {
+    text-align: center;
+}
+
